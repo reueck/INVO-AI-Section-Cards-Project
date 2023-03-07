@@ -4,12 +4,17 @@
 
 body {
 	background-color: var(--color-primary-dblue);
-	padding: 64px 16px;
 }
 
 .home-page {
+    display: grid;
+    place-items: center;
+    margin: auto;
+    padding: 64px 16px;
+	max-width: 467px;
+   j
+    
 	&-header-component {
-		max-width: 467px;
 		max-height: 232px;
 		display: flex;
 		flex-direction: column;
@@ -24,10 +29,11 @@ body {
 		}
 	}
 	&-cards {
-        margin-top: 24px;
+		margin-top: 24px;
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(4, 1fr);
+		gap: 16px;
 		&-component {
 			display: flex;
 			flex-direction: column;
@@ -35,13 +41,12 @@ body {
 			justify-content: center;
 			background-color: #272d42;
 			border-radius: 20px;
-			margin: 8px 0;
 			&-heading {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				margin: 20px 88px 0;
+				margin: 20px auto 0;
 				&-icon {
 					display: grid;
 					height: 56px;
@@ -74,11 +79,51 @@ body {
 			}
 			&-content {
 				@include body-2;
-				padding: 0 20px;
 				color: var(--color-secondary-white);
 				opacity: 0.5;
 				text-align: center;
 				margin: 0 20px 20px;
+			}
+		}
+	}
+}
+
+// media queries
+
+@media screen and (min-width: 768px) {
+	.home-page {
+        height: 100vh;
+        margin: auto;
+		&-header-component {
+			&-title {
+				@include header-1;
+			}
+			&-content {
+				@include body-1;
+			}
+			margin-bottom: 16px;
+		}
+		&-cards {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 16px;
+			margin-top: 16px;
+			&-component {
+				&-heading {
+					&-icon {
+						height: 56px;
+						width: 56px;
+						&-glyph {
+							height: 28px;
+							width: 28px;
+						}
+					}
+					&-title {
+						@include header-3;
+					}
+				}
+				&-content {
+					@include body-2;
+				}
 			}
 		}
 	}
