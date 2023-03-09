@@ -31,5 +31,6 @@ This commend will create a dist folder. This is the folder containing your whole
 * Created section based on figma file
 * Created html structure
 * Styled mobile breakpoint 
+* Styled tablet and desktop breakpoints
 
 
